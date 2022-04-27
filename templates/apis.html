@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>APIS</title>
+		<link rel="stylesheet" href="./static/apis-style.css" />
+        <link rel="icon" type="image/png" href="./static/logo-1.png"/>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+        <div class="content">
+            <div class="title">APIS</div>
+            <div class="big-box">
+                <input type="radio" name="tab-btn" id="button-1" value="" checked>
+                <input type="radio" name="tab-btn" id="button-2" value="">
+                <input type="radio" name="tab-btn" id="button-3" value="">
+                <input type="radio" name="tab-btn" id="button-12" value="">
+                <input type="radio" name="tab-btn" id="button-14" value="">
+                <input type="checkbox" id="button-4" value="">
+                <input type="checkbox" id="button-5" value="">
+                <input type="checkbox" id="button-6" value="">
+                <input type="checkbox" id="button-7" value="">
+                <input type="checkbox" id="button-8" value="">
+                <input type="checkbox" id="button-9" value="">
+                <input type="checkbox" id="button-10" value="">
+                <input type="checkbox" id="button-11" value="">
+                <input type="checkbox" id="button-13" value="">
+                <input type="checkbox" id="button-15" value="">
+                <input type="checkbox" id="button-16" value="">
+                <input type="checkbox" id="button-17" value="">
+                <input type="checkbox" id="button-18" value="">
+                <div class="box-1">
+                    <label for="button-1" class="content-1">Gif</label>
+                    <p>гифки по темам</p>
+                    <hr>
+                    <label for="button-2" class="content-2">NSFW</label>
+                    <p>nsfw контент по категориям</p>
+                    <hr>
+                    <label for="button-3" class="content-3">Anime</label>
+                    <p>информация про аниме</p>
+                    <hr>
+                    <label for="button-14" class="content-5">Hentai</label>
+                    <p>информация про хентай</p>
+                    <hr>
+                    <label for="button-12" class="content-4">Meme</label>
+                    <p>аниме мемы</p>
+                </div>
+                <div class="box-2">
+                    <div class="content-1">
+                        <h2>Запрос для гифок:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/gif/{категория}</p>
+                            <label for="button-4" class="content-4">Подробнее</label>
+                        </div>
+                        <div class="content-api-1">
+                            <br>
+                            <h2>Категории:</h2>
+                            <p>
+                                {% for x in list_1 %}
+                                    <a href="https://www.disapi.ru/gif/{{x}}">{{x}}</a>
+                                {% endfor %}
+                            </p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>url</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Ссылка на гифку</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>height</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Высота гифки</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>width</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Ширина гифки</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для списка категорий:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/gif/list</p>
+                            <label for="button-5" class="content-5">Подробнее</label>
+                        </div>
+                        <div class="content-api-2">
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>list</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Список категорий</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-2">
+                        <h2>Запрос для NSFW контент:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/nsfw/{категория}</p>
+                            <label for="button-6" class="content-6">Подробнее</label>
+                        </div>
+                        <div class="content-api-3">
+                            <br>
+                            <h2>Категории:</h2>
+                            <p>
+                                {% for x in list_2 %}
+                                    <a href="https://www.disapi.ru/nsfw/{{x}}">{{x}}</a>
+                                {% endfor %}
+                            </p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>url</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Ссылка на гифку</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>height</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Высота гифки</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>width</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Ширина гифки</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для списка категорий:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/nsfw/list</p>
+                            <label for="button-7" class="content-7">Подробнее</label>
+                        </div>
+                        <div class="content-api-4">
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>list</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Список категорий</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-3">
+                        <h2>Запрос для случайного аниме:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/anime/random</p>
+                            <label for="button-8" class="content-8">Подробнее</label>
+                        </div>
+                        <div class="content-api-5">
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Название на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Названия на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>type_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Тип аниме на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>type_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Тип аниме на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>year</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Год выхода</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episodes</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Количество эпизодов</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>studio</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Аниме студия</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episode_length_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Длительность на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episode_length_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Длительность на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>rating</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Возрастной рейтинг</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>licensed</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Кем лицензировано</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>poster</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Постер к аниме</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для поиска аниме по названию:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/anime/find/{язык}/{название}</p>
+                            <label for="button-9" class="content-9">Подробнее</label>
+                        </div>
+                        <div class="content-api-6">
+                            <br>
+                            <h2>языки:</h2>
+                            <p>
+                                <u>ru</u>
+                                <u>en</u>
+                            </p>
+                            <br>
+                            <h2>Название:</h2>
+                            <p>Названием может являться любой текст</p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>top_1</p>
+                                </div>
+                                <div class="category">
+                                    <p>AnimeDTO</p>
+                                </div>
+                                <div class="category">
+                                    <p>Самое похожее название</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>top_2</p>
+                                </div>
+                                <div class="category">
+                                    <p>AnimeDTO</p>
+                                </div>
+                                <div class="category">
+                                    <p>Менее похожее название</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>top_3</p>
+                                </div>
+                                <div class="category">
+                                    <p>AnimeDTO</p>
+                                </div>
+                                <div class="category">
+                                    <p>Менее похожее название</p>
+                                </div>
+                            </div>
+                            <br>
+                            <h2>AnimeDTO:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Название на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Названия на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>type_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Тип аниме на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>type_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Тип аниме на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>year</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Год выхода</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episodes</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Количество эпизодов</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>studio</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Аниме студия</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episode_length_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Длительность на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episode_length_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Длительность на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>rating</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Возрастной рейтинг</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>licensed</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Кем лицензировано</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>poster</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Постер к аниме</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для поиска аниме по категории:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/anime/{категория}/{данные}</p>
+                            <label for="button-10" class="content-10">Подробнее</label>
+                        </div>
+                        <div class="content-api-7">
+                            <br>
+                            <h2>Категории:</h2>
+                            <p>
+                                {% for x in list_3 %}
+                                    <u>{{x}}</u>
+                                {% endfor %}
+                            </p>
+                            <br>
+                            <h2>Данные:</h2>
+                            <p>Данные можно узнать по запросу .../anime/{категория}/list</p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Название на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Названия на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>type_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Тип аниме на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>type_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Тип аниме на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>year</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Год выхода</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episodes</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Количество эпизодов</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>studio</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Аниме студия</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episode_length_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Длительность на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episode_length_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Длительность на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>rating</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Возрастной рейтинг</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>licensed</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Кем лицензировано</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres_ru</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на русском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres_en</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>poster</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Постер к аниме</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для списка данных:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/anime/{категория}/list</p>
+                            <label for="button-11" class="content-11">Подробнее</label>
+                        </div>
+                        <div class="content-api-8">
+                            <br>
+                            <h2>Категории:</h2>
+                            <p>
+                                {% for x in list_3 %}
+                                    <a href="https://www.disapi.ru/anime/{{x}}/list">{{x}}</a>
+                                {% endfor %}
+                            </p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>list</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Список данных в категории</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-5">
+                        <h2>Запрос для случайного хентая:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/hentai/random</p>
+                            <label for="button-15" class="content-15">Подробнее</label>
+                        </div>
+                        <div class="content-api-10">
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Название на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>censored</p>
+                                </div>
+                                <div class="category">
+                                    <p>boolean</p>
+                                </div>
+                                <div class="category">
+                                    <p>Подвергнут цензуре</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>year</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Год выхода</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episodes</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Количество эпизодов</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>studio</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Хентай студия</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>poster</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Постер к хентаю</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для поиска хентая по названию:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/hentai/find/{название}</p>
+                            <label for="button-16" class="content-16">Подробнее</label>
+                        </div>
+                        <div class="content-api-11">
+                            <br>
+                            <h2>Название:</h2>
+                            <p>Названием может являться любой текст</p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>top_1</p>
+                                </div>
+                                <div class="category">
+                                    <p>HentaiDTO</p>
+                                </div>
+                                <div class="category">
+                                    <p>Самое похожее название</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>top_2</p>
+                                </div>
+                                <div class="category">
+                                    <p>HentaiDTO</p>
+                                </div>
+                                <div class="category">
+                                    <p>Менее похожее название</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>top_3</p>
+                                </div>
+                                <div class="category">
+                                    <p>HentaiDTO</p>
+                                </div>
+                                <div class="category">
+                                    <p>Менее похожее название</p>
+                                </div>
+                            </div>
+                            <br>
+                            <h2>HentaiDTO:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Название на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>censored</p>
+                                </div>
+                                <div class="category">
+                                    <p>boolean</p>
+                                </div>
+                                <div class="category">
+                                    <p>Подвергнут цензуре</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>year</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Год выхода</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episodes</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Количество эпизодов</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>studio</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Хентай студия</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>poster</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Постер к хентаю</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для поиска хентая по категории:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/hentai/{категория}/{данные}</p>
+                            <label for="button-17" class="content-17">Подробнее</label>
+                        </div>
+                        <div class="content-api-12">
+                            <br>
+                            <h2>Категории:</h2>
+                            <p>
+                                {% for x in list_4 %}
+                                    <u>{{x}}</u>
+                                {% endfor %}
+                            </p>
+                            <br>
+                            <h2>Данные:</h2>
+                            <p>Данные можно узнать по запросу .../hentai/{категория}/list</p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>name</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Название на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>censored</p>
+                                </div>
+                                <div class="category">
+                                    <p>boolean</p>
+                                </div>
+                                <div class="category">
+                                    <p>Подвергнут цензуре</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>year</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Год выхода</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>episodes</p>
+                                </div>
+                                <div class="category">
+                                    <p>int</p>
+                                </div>
+                                <div class="category">
+                                    <p>Количество эпизодов</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>studio</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Хентай студия</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>genres</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Жанры на английском</p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>poster</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Постер к хентаю</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Запрос для списка данных:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/hentai/{категория}/list</p>
+                            <label for="button-18" class="content-18">Подробнее</label>
+                        </div>
+                        <div class="content-api-13">
+                            <br>
+                            <h2>Категории:</h2>
+                            <p>
+                                {% for x in list_4 %}
+                                    <a href="https://www.disapi.ru/hentai/{{x}}/list">{{x}}</a>
+                                {% endfor %}
+                            </p>
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>list</p>
+                                </div>
+                                <div class="category">
+                                    <p>array</p>
+                                </div>
+                                <div class="category">
+                                    <p>Список данных в категории</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-4">
+                        <h2>Запрос для случайного мема:</h2>
+                        <div class="api">
+                            <p>https://www.disapi.ru/meme/random</p>
+                            <label for="button-13" class="content-13">Подробнее</label>
+                        </div>
+                        <div class="content-api-9">
+                            <br>
+                            <h2>Возвращаемые данные:</h2>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p><b>Название</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Тип данных</b></p>
+                                </div>
+                                <div class="category">
+                                    <p><b>Описание</b></p>
+                                </div>
+                            </div>
+                            <div class="categorys-box">
+                                <div class="category">
+                                    <p>url</p>
+                                </div>
+                                <div class="category">
+                                    <p>string</p>
+                                </div>
+                                <div class="category">
+                                    <p>Ссылка на мем</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foter"></div>
+        </div>
+	</body>
+</html>

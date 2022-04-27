@@ -1,0 +1,325 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+/*Обнуление*/
+* {
+padding: 0;
+margin: 0;
+border: 0;
+}
+
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+:focus, :active {
+outline: none;
+}
+
+a:focus, a:active {
+outline: none;
+}
+
+nav, footer, header, aside {
+display: block;
+}
+
+html, body {
+height: 100%;
+width: 100%;
+font-size: 100%;
+line-height: 1;
+font-size: 14px;
+-ms-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+font-family: inherit;
+}
+
+input::-ms-clear {
+display: none;
+}
+
+button {
+cursor: pointer;
+}
+
+button::-moz-focus-inner {
+padding: 0;
+border: 0;
+}
+
+a, a:visited {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+ul li {
+list-style: none;
+}
+
+img {
+vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-size: inherit;
+font-weight: inherit;
+}
+  /*--------------------*/
+
+::selection {
+    background: grey;
+}
+
+body {
+    background-image: url(./welcome.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Ubuntu Mono';
+}
+
+.big-box {
+    display: flex;
+    align-items: flex-start;
+    width: 1060px;
+}
+
+.box-1 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgba( 0,0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 160px;
+    word-wrap: break-word;
+    font-family: 'Ubuntu Mono';
+    margin-right: 20px;
+}
+
+.box-2 {
+    padding: 30px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgba( 0,0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 700px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    font-family: 'Ubuntu Mono';
+}
+
+.box-1 label {
+    font-size: 20px;
+}
+
+.box-2 label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.box-1 p {
+    font-size: 12px;
+    color: 	#3f3f3f;
+}
+
+.box-2 p {
+    font-size: 16px;
+}
+
+.box-2 h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.foter {
+    padding: 20px;
+    background-color: rgba( 0,0,0,0);
+}
+
+.big-box input[type="radio"],
+.big-box input[type="checkbox"] {
+    display: none;
+}
+
+.box-2 .content-1,
+.box-2 .content-2,
+.box-2 .content-3,
+.box-2 .content-4,
+.box-2 .content-5,
+.box-2 .content-api-1,
+.box-2 .content-api-2,
+.box-2 .content-api-3,
+.box-2 .content-api-4,
+.box-2 .content-api-5,
+.box-2 .content-api-6,
+.box-2 .content-api-7,
+.box-2 .content-api-8,
+.box-2 .content-api-9,
+.box-2 .content-api-10,
+.box-2 .content-api-11,
+.box-2 .content-api-12,
+.box-2 .content-api-13 {
+    display: none;
+}
+
+.box-2 .api .content-4,
+.box-2 .api .content-5 {
+    display: block;
+}
+
+.categorys-box {
+    display: flex;
+}
+
+.category {
+    display: flex;
+    width: 33%;
+}
+
+.api {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+#button-1:checked~.box-2 .content-1,
+#button-2:checked~.box-2 .content-2,
+#button-3:checked~.box-2 .content-3,
+#button-12:checked~.box-2 .content-4,
+#button-14:checked~.box-2 .content-5,
+#button-4:checked~.box-2 .content-api-1,
+#button-5:checked~.box-2 .content-api-2,
+#button-6:checked~.box-2 .content-api-3,
+#button-7:checked~.box-2 .content-api-4,
+#button-8:checked~.box-2 .content-api-5,
+#button-9:checked~.box-2 .content-api-6,
+#button-10:checked~.box-2 .content-api-7,
+#button-11:checked~.box-2 .content-api-8,
+#button-13:checked~.box-2 .content-api-9,
+#button-15:checked~.box-2 .content-api-10,
+#button-16:checked~.box-2 .content-api-11,
+#button-17:checked~.box-2 .content-api-12,
+#button-18:checked~.box-2 .content-api-13 {
+    display: block;
+}
+
+#button-1:checked~.box-1 .content-1,
+#button-2:checked~.box-1 .content-2,
+#button-3:checked~.box-1 .content-3,
+#button-12:checked~.box-1 .content-4,
+#button-14:checked~.box-1 .content-5 {
+    font-weight: bold;
+}
+
+#button-4:checked~.box-2 .content-4,
+#button-5:checked~.box-2 .content-5,
+#button-6:checked~.box-2 .content-6,
+#button-7:checked~.box-2 .content-7,
+#button-8:checked~.box-2 .content-8,
+#button-9:checked~.box-2 .content-9,
+#button-10:checked~.box-2 .content-10,
+#button-11:checked~.box-2 .content-11,
+#button-13:checked~.box-2 .content-13,
+#button-15:checked~.box-2 .content-15,
+#button-16:checked~.box-2 .content-16,
+#button-17:checked~.box-2 .content-17,
+#button-18:checked~.box-2 .content-18 {
+    font-weight: bold;
+}
+
+.box-1 .content-1:hover,
+.box-1 .content-2:hover,
+.box-1 .content-3:hover,
+.box-1 .content-4:hover,
+.box-1 .content-5:hover,
+.api .content-4:hover,
+.api .content-5:hover,
+.api .content-6:hover,
+.api .content-7:hover,
+.api .content-8:hover,
+.api .content-9:hover,
+.api .content-10:hover,
+.api .content-11:hover,
+.api .content-13:hover,
+.api .content-15:hover,
+.api .content-16:hover,
+.api .content-17:hover,
+.api .content-18:hover {
+    font-weight: bold;
+}
+
+hr {
+    background-color: black;
+    height: 2px;
+    margin: 6px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 1060px) {
+    .big-box {
+        width: 880px;
+    }
+}
+@media (max-width: 880px) {
+    .big-box {
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+    .box-2 {
+        width: 90vw;
+    }
+    .box-1 {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .api {
+        flex-direction: column;
+    }
+}
